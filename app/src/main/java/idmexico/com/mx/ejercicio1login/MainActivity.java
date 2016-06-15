@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String usuario= user.getText().toString();
         String contra = pwd.getText().toString();
 
-        if (usuario.equals("gsevilla") && contra.equals("123")){
+        if ((usuario.equals("gsevilla") || usuario.equals("ricardo")) && contra.equals("123")){
             Toast.makeText(getApplicationContext(), "Acceso Correcto", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(),view_principal.class);
             intent.putExtra("usuarioKey", usuario);

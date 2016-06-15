@@ -37,7 +37,11 @@ public class view_principal extends AppCompatActivity implements View.OnClickLis
     }
 
     private void mostrarPerfil() {
-        getFragmentManager().beginTransaction().replace(R.id.Fholder, new profile()).commit();
+        String nomAux=getIntent().getExtras().getString("usuarioKey");
+
+        profile instancia = profile.NuevaInstancia(nomAux);
+
+        getFragmentManager().beginTransaction().replace(R.id.Fholder, instancia).commit();
     }
 
 
