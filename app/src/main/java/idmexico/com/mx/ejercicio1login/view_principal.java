@@ -26,7 +26,14 @@ public class view_principal extends AppCompatActivity implements View.OnClickLis
             case R.id.btnPerfil_principal:
                 mostrarPerfil();
                 break;
+            case  R.id.btnLista_principal:
+                GeneraLista();
+                break;
         }
+    }
+
+    private void GeneraLista() {
+        getFragmentManager().beginTransaction().replace(R.id.Fholder,new frListas()).commit();
     }
 
     private void mostrarPerfil() {
