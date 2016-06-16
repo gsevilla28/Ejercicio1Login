@@ -16,7 +16,6 @@ import android.widget.TextView;
 public class profile extends Fragment {
 
     /*en fragment no hay comunicacion por intent*/
-
     public static profile NuevaInstancia(String nombre){
         profile p = new profile();
         Bundle b = new Bundle();

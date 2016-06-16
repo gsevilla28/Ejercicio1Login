@@ -25,8 +25,10 @@ public class AdapterItemsList extends ArrayAdapter<modeloItems>{
         super(context, 0 , objects);
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        /*establecer la vista para row*/
 
         if (convertView ==null)
         {
@@ -43,4 +45,5 @@ public class AdapterItemsList extends ArrayAdapter<modeloItems>{
 
         return convertView;
     }
+
 }

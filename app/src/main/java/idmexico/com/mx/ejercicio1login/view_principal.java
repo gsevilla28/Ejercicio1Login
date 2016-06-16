@@ -8,6 +8,7 @@ import android.view.View;
 /**
  * Created by Administrator on 15/06/2016.
  */
+/** esta clase se declara en manifet para poder acceder a ella*/
 public class view_principal extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -15,10 +16,11 @@ public class view_principal extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_principal);
 
-
         findViewById(R.id.btnPerfil_principal).setOnClickListener(this);
         findViewById(R.id.btnLista_principal).setOnClickListener(this);
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -31,11 +33,12 @@ public class view_principal extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
-
+    /**funcion para mostrar 2do frgamento*/
     private void GeneraLista() {
         getFragmentManager().beginTransaction().replace(R.id.Fholder,new frListas()).commit();
     }
 
+    /*funcion para mostrar primer frgamento*/
     private void mostrarPerfil() {
         String nomAux=getIntent().getExtras().getString("usuarioKey");
 

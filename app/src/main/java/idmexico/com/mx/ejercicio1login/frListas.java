@@ -7,14 +7,18 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import Adaptador.AdapterItemsList;
 import Modelos.modeloItems;
+
+import static android.widget.AdapterView.*;
 
 /**
  * Created by Administrator on 15/06/2016.
@@ -37,9 +41,17 @@ public class frListas extends Fragment implements View.OnClickListener {
 
         view.findViewById(R.id.btnAgregar_listas).setOnClickListener(this);
 
+        ((ListView) view.findViewById(R.id.listitem)).setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity(), "position:  " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        return view;//super.onCreateView(inflater, container, savedInstanceState);
+        return view;
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -49,6 +61,8 @@ public class frListas extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+
 
     private void AgregarItem() {
 
@@ -65,4 +79,5 @@ public class frListas extends Fragment implements View.OnClickListener {
             cont++;
         }
     }
+
 }
